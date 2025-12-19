@@ -953,10 +953,10 @@ if st.session_state.get('run_optimization', False):
                 }}).bindPopup(`
                     <div style="font-family: Poppins; font-size: 12px; color: #1e293b;">
                         <b style="font-size: 14px; color: {r.color};">🚛 Truk {r.truk}</b><br>
-                        📏 {r.detail['Jarak'] || '?.? km'}<br>
-                        ⏱️ {r.detail['Waktu'] || '?.? jam'}<br>
-                        💰 {r.detail['Biaya'] || 'Rp ?'}<br>
-                        📦 {r.detail['Muatan'] || '? kg'}
+                            📏 {r.detail.get('Jarak', '?.? km')}<br>
+                            ⏱️ {r.detail.get('Waktu', '?.? jam')}<br>
+                            💰 {r.detail.get('Biaya', 'Rp ?')}<br>
+                            📦 {r.detail.get('Muatan', '? kg')}
                     </div>
                 `, {{maxWidth: 250}}).addTo(map);
                 
